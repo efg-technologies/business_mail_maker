@@ -1,0 +1,3 @@
+[submodule "business_mail_maker_front"]
+	path = business_mail_maker_front
+	url = https://github.com/nagaminenot/business_mail_maker_front
