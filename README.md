@@ -1,5 +1,14 @@
-# ていねい文メーカー
+# 利用規約解析APIサーバー
 
-## 環境
+## API
+- post /analysis/url
+	- send
+		- string: target url
+	- response
+		- { msgs: string }
 
-- node.js "8.12.0"
+- post /analysis/text
+	- send
+		- string: term text
+	- response
+		- { msgs: string }
