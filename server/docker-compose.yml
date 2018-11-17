@@ -1,0 +1,23 @@
+version: '2'
+services:
+    app:
+        build: .
+        volumes:
+            - .:/app
+            - ./tmp:/tmp/:rw
+        command: python /app/app.py
+        ports:
+            - 5000:5000
+        links:
+            - db
+    db:
+        restart: always
+        image: postgres:10.1
+        environment:
+            - POSTGRES_DB=term_data
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=password
+        ports:
+            - 5433:5432
+        volumes:
+            - ./data/db:/data/db
