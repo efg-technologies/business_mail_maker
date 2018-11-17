@@ -47,10 +47,26 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+const axios = require('axios')
 
 export default {
   components: {
     Logo
+  },
+  mounted() {
+    axios
+      .get('https://www.goodfind.jp/')
+      .then(function(response) {
+        // handle success
+        console.log(response)
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error)
+      })
+      .then(function() {
+        // always executed
+      })
   }
 }
 </script>
