@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from core.term_analysis import TermAnalysis
+from core.analysis import Analysis
 from flask import Flask, request, abort
 from flask_cors import CORS
 import json
@@ -17,17 +17,17 @@ def index():
     return 'hello'
 
 
-@app.route('/analysis/text', methods=['POST'])
+@app.route('/analysis', methods=['POST'])
 def analysis_text():
     if not request.json:
         abort(400)
     data = request.json
-    analysis = run_analysis(data['text'])
+    analysis = run_analysis(data['row_text'])
     return json.dumps(analysis.out())
 
 
 def run_analysis(term: str):
-    analysis = TermAnalysis(term)
+    analysis = Analysis(term)
     analysis.run()
     return analysis
 
