@@ -79,7 +79,3 @@ dist
 
 # IDE
 .idea
-
-#gitkeep
-./.nuxt/*
-!.gitkeep
