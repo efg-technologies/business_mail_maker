@@ -8,16 +8,3 @@ services:
         command: uwsgi --ini config/uwsgi.ini
         ports:
             - 5000:5000
-        links:
-            - db
-    db:
-        restart: always
-        image: postgres:10.1
-        environment:
-            - POSTGRES_DB=term_data
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=password
-        ports:
-            - 5432:5432
-        volumes:
-            - ./data/db:/data/db
