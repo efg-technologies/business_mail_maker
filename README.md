@@ -1,11 +1,6 @@
-# 利用規約解析APIサーバー
+# 丁寧語へ変換するAPI
 
 ## API
-- post /analysis/url
-	- send
-		- string: target url
-	- response
-		- { msgs: string }
 
 - post /analysis/text
 	- send
